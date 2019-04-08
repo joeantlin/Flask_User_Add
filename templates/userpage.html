@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Read {{ idnum }}</title>
+</head>
+<body>
+    <h1>User {{ idnum }}</h1>
+    <p><a href="/users">Home</a></p>
+    <div class="info">
+        {% for friend in all_friends %}
+        <p>Full Name: {{ friend["first_name"] }} {{ friend["last_name"] }}</p>
+        <p>Email: {{ friend["email"] }}</p>
+        <p>Created On: {{ friend["created_at"] }}</p>
+        <p>Last Updated On: {{ friend["updated_at"] }}</p>
+
+        {% endfor %}
+    </div>
+    <p>
+        <a href="/users/{{ idnum }}/edit">Edit</a> | 
+        <a href="/users/{{ idnum }}/destroy">Delete</a></td>
+    </p>
+
+</body>
+</html>
